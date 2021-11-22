@@ -26,7 +26,7 @@ composer dump-autoload -o
 php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
 
 # use the application
-php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" "Bread"
+php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
 ```
 
 ## Extending products
