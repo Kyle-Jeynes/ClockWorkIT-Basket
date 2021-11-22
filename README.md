@@ -26,6 +26,10 @@ php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special So
 
 Migrations can be found in https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/tree/main/app/Database/migrations. Products and Discounts can be added and removed from here to expand the products.
 
+## Extending the application
+
+All of the magic happens in the https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/app/Console/Controllers/BasketController.php. This controller is executed via the https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/app/Console/Console.php.
+
 ## Products to choose from
 
 - Kyes Special Soup (Recommended) @ £0.65/tin
