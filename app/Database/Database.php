@@ -30,9 +30,7 @@ class Database extends PDO
                 ]
             );
                 
-            static::$database = $this;
-                
-            return $this;
+            return (static::$database = $this);
         }
         catch (PDOException $e)
         {
