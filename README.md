@@ -24,10 +24,10 @@ php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special So
 
 ## Products to choose from
 
-- Kyes Special Soup (Recommended)
-- Bread (50% off each loaf when you purchase 2 recommended soups)
-- Milk
-- Apple Bag (10% Off)
+- Kyes Special Soup (Recommended) @ £0.65/tin
+- Bread (50% off each loaf when you purchase 2 recommended soups) @ £0.80/loaf
+- Milk @ £1.30/bottle
+- Apple Bag (10% Off) @ £1.00/bag
 
 ## Summary
 
