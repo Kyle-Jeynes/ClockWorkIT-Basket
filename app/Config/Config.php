@@ -7,8 +7,17 @@ use RuntimeException;
 
 class Config
 {
+    /**
+     * Path to environmental file
+     * @var string
+     */
     protected string $path;
     
+    /**
+     * Check file exists
+     * @param string $path
+     * @throws InvalidArgumentException
+     */
     public function __construct(string $path)
     {
         if(!file_exists($path))
@@ -19,6 +28,11 @@ class Config
         $this->path = $path;
     }
     
+    /**
+     * Parse the file and setenv
+     * @return void
+     * @throws RuntimeException
+     */
     public function load(): void
     {
         if(!is_readable($this->path))

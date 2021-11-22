@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * PoC - Typically, I would use Laravel's built-in migrations.
+ */
+
 return [
     "CREATE TABLE product_discounts (
         id INT NOT NULL AUTO_INCREMENT,

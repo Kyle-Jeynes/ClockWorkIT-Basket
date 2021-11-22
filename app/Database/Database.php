@@ -57,6 +57,7 @@ class Database extends PDO
      */
     public function migrate()
     {
+        # Loop through the directory for .php files
         foreach(glob(ROOT_DIR . 'app/Database/migrations/*.php', GLOB_BRACE) as $file)
         {
             try
@@ -64,9 +65,9 @@ class Database extends PDO
                 echo 'Mirgating ' . sprintf('%s', ($exp = explode('_', $file))[count($exp) -1]) . '......';
                 foreach((require $file) as $query)
                 {
-                    ($this->prepare($query))->execute();
+                    # Blind execute the SQL query
+                    echo ($this->prepare($query))->execute() ? "done.\n" : "failed.\n";
                 }
-                echo "done.\n";
             }
             catch (PDOException $e)
             {
@@ -84,6 +85,7 @@ class Database extends PDO
      */
     private function config(string $key)
     {
+        # Makes string concatenation easier using braces with {$this} rather than .
         return getenv($key);
     }
 }

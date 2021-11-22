@@ -4,6 +4,13 @@ My solution uses a MYSQL database to make it more dynamic and maintainable; I at
 
 ![PoC](https://i.imgur.com/vss65XQ.png)
 
+## Requirements
+
+- Composer
+- XAMPP or local MySQL server
+- PHP 7.4^
+- PHP-PDO Extension
+
 ## Installation
 
 Ensure you update the `.env` file inside the main repository with your revelant SQL information. I used XAMPP locally to test.
@@ -12,7 +19,7 @@ Ensure you update the `.env` file inside the main repository with your revelant 
 # clone the repository
 git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git /opt/kyle-jeynes-submission
 
-# generate autoload
+# generate autoload with composer
 composer dump-autoload -o
 
 # migrate the database
