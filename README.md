@@ -2,7 +2,7 @@
 
 My solution uses a MYSQL database to make it more dynamic and maintainable; I attempted to build it in the same way Laravel would work to demonstrate comptenteny in Laravel but noticed the technical interview says not to use Frameworks.
 
-![PoC](https://i.imgur.com/00EtfgH.png)
+![PoC](https://i.imgur.com/vss65XQ.png)
 
 ## Installation
 
@@ -40,3 +40,7 @@ All of the magic happens in the https://github.com/Kyle-Jeynes/ClockWorkIT-Baske
 ## Summary
 
 Everything was built from scratch from the ground up in an attempt to focus the appliation around using Vanilla-PHP with a Laravel feel of the code. Keeping to the specifications, the first argument in the method is the command followed by `n` values of products.
+
+## Database
+
+![Database](https://i.imgur.com/CECqH8r.png)
