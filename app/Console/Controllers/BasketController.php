@@ -34,11 +34,11 @@ class BasketController
         return $this;
     }
     
+    /**
+     * Process the basket ready for summary
+     */
     public function processOrder(): void
     {
-        # Apples = 10% Discount
-        # Bread = Half price if 2x Tins of soup
-        
         $pdo = Database::raw();
         $pdo->beginTransaction();
         
