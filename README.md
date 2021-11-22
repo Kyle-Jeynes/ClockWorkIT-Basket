@@ -22,6 +22,10 @@ php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
 php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" "Bread"
 ```
 
+## Extending products
+
+Migrations can be found in https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/tree/main/app/Database/migrations. Products and Discounts can be added and removed from here to expand the products.
+
 ## Products to choose from
 
 - Kyes Special Soup (Recommended) @ £0.65/tin
