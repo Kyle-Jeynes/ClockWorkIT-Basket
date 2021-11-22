@@ -1,0 +1,141 @@
+<?php
+
+namespace App\Console\Controllers;
+
+use App\Database\Database;
+
+class BasketController
+{
+    private array $argv = [];
+    private array $basket = [];
+    
+    public function __construct() {}
+    
+    /**
+     * Filters the database to ensure the products exist
+     * @param string $argv
+     */
+    public function validate(array $argv): BasketController
+    {
+        $this->argv = $argv;
+        
+        $stmt = Database::raw()->prepare('SELECT name FROM products');
+        $stmt->execute();
+        
+        # Convert to lower-case for none-sensitive comparison
+        $products = array_map(fn($p) => strtolower($p), array_column($stmt->fetchAll(), 'name'));
+        
+        # Ensure only items inside the database can be parsed
+        if(($notFoundProducts = array_diff(array_map(fn($p) => strtolower($p), $argv), $products)))
+        {
+            die('Sorry, some of those products could not be found: ' . implode(', ', $notFoundProducts));
+        }
+        
+        return $this;
+    }
+    
+    public function processOrder(): void
+    {
+        # Apples = 10% Discount
+        # Bread = Half price if 2x Tins of soup
+        
+        $pdo = Database::raw();
+        $pdo->beginTransaction();
+        
+        foreach($this->argv as $product)
+        {
+            # Select name also for the correct case-sensitive representation of the product
+            $stmt = $pdo->prepare('SELECT id, price, name FROM products WHERE name = ?');
+            $stmt->execute([$product]);
+            
+            # Check product is already set
+            if(isset($this->basket[($result = $stmt->fetch())['id']]))
+            {
+                # Append to quantity, subtotal and total
+                $this->basket[$result['id']]['quantity']++;
+                $this->basket[$result['id']]['subtotal'] = $this->basket[$result['id']]['quantity'] * $result['price'];
+                $this->basket[$result['id']]['total'] = $this->basket[$result['id']]['quantity'] * $result['price'];
+            }
+            else
+            {
+                # Add product
+                $this->basket[$result['id']] = array_merge(['quantity' => 1], $result);
+                $this->basket[$result['id']]['subtotal'] = $this->basket[$result['id']]['quantity'] * $result['price'];
+                $this->basket[$result['id']]['total'] = $this->basket[$result['id']]['quantity'] * $result['price'];
+            }
+        }
+        
+        $pdo->commit();
+        $this->applyDiscounts()
+            ->outputResults();
+    }
+    
+    /**
+     * Loops database and applies selected discounts dependent on user basket
+     * @return BasketController
+     */
+    private function applyDiscounts(): BasketController
+    {
+        $stmt = Database::raw()->prepare('SELECT product_id, percentage, product_effects_id, when_product_has_quantity FROM product_discounts');
+        $stmt->execute();
+        $discounts = $stmt->fetchAll();
+        
+        foreach($discounts as $discount)
+        {
+            list($productId, $percentage, $productEffectsId, $filter) = array_values($discount);
+
+            if(isset($this->basket[$productId]) && isset($this->basket[$productEffectsId]))
+            {
+                if($this->basket[$productId]['quantity'] >= $filter)
+                {
+                    $appliedCounter = 0;
+                    $total = $this->basket[$productEffectsId]['quantity'] * $this->basket[$productEffectsId]['price'];
+                    $shouldDeduct = floor($this->basket[$productId]['quantity'] / $filter); # 2/2 = 1
+                    $difference = 0;
+                    
+                    for($i = 0; $i <= $shouldDeduct ; $i++)
+                    {
+                        if($this->basket[$productEffectsId]['quantity'] > $appliedCounter++)
+                        {
+                            $previous = $total;
+                            $total = $total - (($this->basket[$productEffectsId]['price'] / 100) * $percentage);
+                            $difference += $previous - $total;
+                        }
+                    }
+                    
+                    $this->basket[$productEffectsId]['total'] = $total;
+                    $this->basket[$productEffectsId]['subtotal'] = $this->basket[$productEffectsId]['quantity'] * $this->basket[$productEffectsId]['price'];
+                    $this->basket[$productEffectsId]['discount'][] = sprintf('%s %s%% off: -£%s', $this->basket[$productEffectsId]['name'], $percentage, number_format($difference, 2));
+                }
+            }
+            else
+            {
+                if(!isset($this->basket[$productEffectsId]) && isset($this->basket[$productId]))
+                {
+                    if ($this->basket[$productId]['quantity'] >= $filter)
+                    {
+                        $stmt = Database::raw()->prepare('SELECT name FROM products WHERE id = ?');
+                        $stmt->execute([$productEffectsId]);
+                        $this->basket[$productId]['discount'][] = sprintf('%s %s%% off: -£%s', $stmt->fetch()['name'], $percentage, number_format(0, 2));
+                    }
+                }
+            }
+        }
+        
+        return $this;
+    }
+    
+    private function outputResults(): void
+    {
+        $subTotal = number_format(array_sum(array_column($this->basket, 'subtotal')), 2);
+        $total = number_format(array_sum(array_column($this->basket, 'total')), 2);
+        $discount = array_column($this->basket, 'discount');
+        
+        echo "Subtotal £{$subTotal}\n";
+        if(count($discount) > 0)
+            foreach($discount as $d) echo implode("\n", $d) . "\n";
+        else
+            echo "(no offers available)\n";
+        echo "Total: £{$total}";
+    }
+}
