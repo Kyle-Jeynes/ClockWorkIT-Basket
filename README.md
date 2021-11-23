@@ -64,6 +64,8 @@ vendor/bin/phpunit
 
 > When you are finished with testing, you can run `docker-compose down -v` to safely remove the container and remove the associated persisted data with it.
 
+> The Docker network will only expose the services to the local clockworkit network which means the database and php-fpm will not be exposed to your main network and thus should not cause any bind errors.
+
 ## Installation - Manually
 
 Ensure you update the `.env` file inside the main repository with your revelant SQL information. You will need [composer](https://getcomposer.org/download/) and you will need to have a running SQL server at `127.0.0.1:3306` (I used [XAMPP](https://www.apachefriends.org/download.html)).
