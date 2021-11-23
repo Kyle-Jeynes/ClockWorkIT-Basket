@@ -64,7 +64,8 @@ class Database extends PDO
                 foreach((require $file) as $query)
                 {
                     # Blind execute the SQL query
-                    echo ($this->prepare($query))->execute() ? "done.\n" : "failed.\n";
+                    echo ($this->prepare($query))->execute() ? "" : "failed.\n";
+                    echo "done.\n";
                 }
             }
             catch (PDOException $e)
