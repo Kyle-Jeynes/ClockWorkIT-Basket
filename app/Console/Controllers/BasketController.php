@@ -154,6 +154,6 @@ class BasketController
             foreach($discount as $d) echo implode("\n", $d) . "\n";
         else
             echo "(no offers available)\n";
-        echo "Total: £{$total}";
+        echo "Total: £{$total}\n"; # additional line break for linux
     }
 }
