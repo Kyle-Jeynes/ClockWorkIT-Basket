@@ -3,6 +3,7 @@
 My solution uses a MYSQL database to make it more dynamic and maintainable; I attempted to build it in the same way Laravel would work to demonstrate comptenteny in Laravel but noticed the technical interview says not to use Frameworks.
 
 ![PoC](https://i.imgur.com/vss65XQ.png)
+![Docker](https://i.imgur.com/V3sXe6n.png)
 
 ## Requirements
 
@@ -11,7 +12,7 @@ My solution uses a MYSQL database to make it more dynamic and maintainable; I at
 - PHP 7.4^
 - PHP-PDO Extension
 
-## Installation
+## Installation - Docker is recommended
 
 Ensure you update the `.env` file inside the main repository with your revelant SQL information. I used XAMPP locally to test.
 
@@ -47,7 +48,7 @@ docker exec -it php /bin/bash
 php -f public/index.php MigrateDatabase
 
 # use the basket
-php -f public/index.php PriceBasket 'Kyes Special Soup' 'Kyes Special Soup' Bread
+php -f public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
 ```
 
 ## Extending products
