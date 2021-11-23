@@ -14,6 +14,11 @@ My solution uses a MYSQL database to make it more dynamic and maintainable; I at
 
 ## Requirements
 
+- Docker
+- Docker-Compose
+
+> OR
+
 - Composer
 - XAMPP or local MySQL server
 - PHP 7.4^
