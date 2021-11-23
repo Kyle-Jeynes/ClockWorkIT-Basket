@@ -36,7 +36,7 @@ class Database extends PDO
         {
             # Log the error
             file_put_contents(ROOT_DIR . $this->config('LOG_FILE'), file_get_contents(ROOT_DIR . $this->config('LOG_FILE')) . "\n{$e->getMessage()}");
-            if($this->config('DEBUG') === TRUE) throw $e;
+            if((bool) $this->config('DEBUG')) throw $e;
         }
     }
     
@@ -72,7 +72,7 @@ class Database extends PDO
             {
                 # Log the error
                 file_put_contents(ROOT_DIR . $this->config('LOG_FILE'), file_get_contents(ROOT_DIR . $this->config('LOG_FILE')) . "\n{$e->getMessage()}");
-                if($this->config('DEBUG') === TRUE) throw $e;
+                if((bool) $this->config('DEBUG')) throw $e;
             }
         }
     }
