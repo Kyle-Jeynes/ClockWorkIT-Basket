@@ -72,6 +72,7 @@ git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git && cd ClockWorkI
 
 # generate autoload with composer
 composer dump-autoload -o
+composer install
 
 # migrate the database
 php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
