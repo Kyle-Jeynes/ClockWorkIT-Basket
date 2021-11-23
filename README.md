@@ -2,12 +2,14 @@
 
 My solution uses a MYSQL database to make it more dynamic and maintainable; I attempted to build it in the same way Laravel would work to demonstrate comptenteny in Laravel but noticed the technical interview says not to use Frameworks.
 
-## Images
+## Images of the application
 
-Manual installation and execution
+> Manual installation and execution
+
 ![PoC](https://i.imgur.com/vss65XQ.png)
 
-Docker installation and execution
+> Docker installation and execution
+
 ![Docker](https://i.imgur.com/V3sXe6n.png)
 
 ## Requirements
@@ -17,27 +19,9 @@ Docker installation and execution
 - PHP 7.4^
 - PHP-PDO Extension
 
-## Installation - Docker is recommended
-
-Ensure you update the `.env` file inside the main repository with your revelant SQL information. I used XAMPP locally to test running the SQL server at `127.0.0.1:3306`.
-
-```bash
-# clone the repository
-git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git /opt/kyle-jeynes-submission
-
-# generate autoload with composer
-composer dump-autoload -o
-
-# migrate the database
-php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
-
-# use the application
-php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
-```
-
 ## Installation with Docker (recommended)
 
-All the attributes are already set, just download docker and docker-compose on your envrionment and you are good to go.
+All the configuration is already set, just download docker and docker-compose on your envrionment and you are good to go.
 
 ```bash
 # clone the repository
@@ -54,6 +38,24 @@ php -f public/index.php MigrateDatabase
 
 # use the basket
 php -f public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
+```
+
+## Installation - Manually
+
+Ensure you update the `.env` file inside the main repository with your revelant SQL information. You will need [composer](https://getcomposer.org/download/) and you will need to have a running SQL server at `127.0.0.1:3306` (I used [XAMPP](https://www.apachefriends.org/download.html)).
+
+```bash
+# clone the repository
+git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git /opt/kyle-jeynes-submission && cd /opt/kyle-jeynes-submisson
+
+# generate autoload with composer
+composer dump-autoload -o
+
+# migrate the database
+php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
+
+# use the application
+php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
 ```
 
 ## Extending products
