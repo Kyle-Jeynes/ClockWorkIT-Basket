@@ -1,10 +1,19 @@
 # ClockWorkIT - Basket Software
 
-- Implemented Database
-- Vanilla-PHP
-- Dockerized Environment
+As tasked, PSB the table of contents for my technical interview for ClocksWorkIT.
 
-Built from scratch, I tried to focus on implementing the core structure around Laravel to demonstrate competency in Laravel.
+## Contents
+
+- [Images of the application](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#images-of-the-application)
+- [Requirements](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#requirements)
+- [Installation with Docker (Recommended)](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#installation-with-docker-recommended)
+- [Installation Manually](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#installation---manually)
+- [Testing with PHPUnit](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#phpunit-tests)
+- [Extending Products and Discounts](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#extending-products)
+- [Extending the application](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#extending-the-application)
+- [Products to choose from](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#products-to-choose-from)
+- [Summary](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#products-to-choose-from)
+- [Database Screenshot](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#database)
 
 ## Images of the application
 
@@ -66,6 +75,13 @@ php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
 # use the application
 php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
 ```
+
+## PHPUnit Tests
+
+- I have built in a few tests to make development life easier and decided to add it into the project.
+- PHPUnit ^9.5 is used and test can be ran by executing the `vendor/bin/phpunit` binary inside the project root directory.
+
+![Tests Pass](https://i.imgur.com/7QVxRmG.png)
 
 ## Extending products
 
