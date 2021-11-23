@@ -1,8 +1,19 @@
 # ClockWorkIT - Basket Software
 
-- Implemented Database
-- Vanilla-PHP
-- Dockerized Environment
+As tasked, PSB the table of contents for my technical interview for ClocksWorkIT.
+
+## Contents
+
+- [Images of the application](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#images-of-the-application)
+- [Requirements](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#requirements)
+- [Installation with Docker (Recommended)](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#installation-with-docker-recommended)
+- [Installation Manually](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#installation---manually)
+- [Testing with PHPUnit](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#phpunit-tests)
+- [Extending Products and Discounts](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#extending-products)
+- [Extending the application](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#extending-the-application)
+- [Products to choose from](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#products-to-choose-from)
+- [Summary](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#products-to-choose-from)
+- [Database Screenshot](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#database)
 
 Built from scratch, I tried to focus on implementing the core structure around Laravel to demonstrate competency in Laravel.
 
