@@ -51,7 +51,7 @@ Ensure you update the `.env` file inside the main repository with your revelant 
 
 ```bash
 # clone the repository
-git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git /opt/kyle-jeynes-submission && cd /opt/kyle-jeynes-submisson
+git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git && cd ClockWorkIT-Basket
 
 # generate autoload with composer
 composer dump-autoload -o
