@@ -29,6 +29,27 @@ php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
 php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
 ```
 
+## Installation with Docker (recommended)
+
+All the attributes are already set, just download docker and docker-compose on your envrionment and you are good to go.
+
+```bash
+# clone the repository
+git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git
+
+# build and run containers
+docker-compose up -d --build
+
+# interact with container
+docker exec -it php /bin/bash
+
+# migrate the tables
+php -f public/index.php MigrateDatabase
+
+# use the basket
+php -f public/index.php PriceBasket 'Kyes Special Soup' 'Kyes Special Soup' Bread
+```
+
 ## Extending products
 
 Migrations can be found in https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/tree/main/app/Database/migrations. Products and Discounts can be added and removed from here to expand the products.
