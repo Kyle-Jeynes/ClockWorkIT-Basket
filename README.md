@@ -47,7 +47,7 @@ All the configuration is already set, just download docker and docker-compose on
 git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git && cd ClockWorkIT-Basket
 
 # build and run containers
-docker-compose up -d --build > /dev/null
+docker-compose up -d --build
 
 # interact with container
 docker exec -it php /bin/bash
