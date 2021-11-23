@@ -15,8 +15,6 @@ As tasked, PSB the table of contents for my technical interview for ClocksWorkIT
 - [Summary](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#products-to-choose-from)
 - [Database Screenshot](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#database)
 
-Built from scratch, I tried to focus on implementing the core structure around Laravel to demonstrate competency in Laravel.
-
 ## Images of the application
 
 > Manual installation and execution
