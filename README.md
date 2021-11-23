@@ -14,6 +14,7 @@ As tasked, PSB the table of contents for my technical interview for ClocksWorkIT
 - [Products to choose from](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#products-to-choose-from)
 - [Summary](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#products-to-choose-from)
 - [Database Screenshot](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/blob/main/README.md#database)
+- [Troubleshooting](https://github.com/Kyle-Jeynes/ClockworkIT-Basket/blob/main/README.md#troubleshooting)
 
 ## Images of the application
 
@@ -106,3 +107,9 @@ Everything was built from scratch from the ground up in an attempt to focus the 
 ## Database
 
 ![Database](https://i.imgur.com/CECqH8r.png)
+
+## Troubleshooting
+
+- If you have inputted incorrect `.env` configuration and built the containers:
+ - `exit` from the container TTY and run `docker-compose down -v`.
+ - Update your `.env` and then run `docker-compose up -d --build > /dev/null` again
