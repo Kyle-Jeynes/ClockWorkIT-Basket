@@ -35,7 +35,7 @@ class Database extends PDO
         catch (PDOException $e)
         {
             # Log the error
-            file_put_contents(ROOT_DIR . $this->config('LOG_FILE'), file_get_contents(ROOT_DIR . $this->config('LOG_FILE') . "\n{$e->getMessage()}"));
+            file_put_contents(ROOT_DIR . $this->config('LOG_FILE'), file_get_contents(ROOT_DIR . $this->config('LOG_FILE')) . "\n{$e->getMessage()}");
             if($this->config('DEBUG')) throw $e;
         }
     }
@@ -71,7 +71,7 @@ class Database extends PDO
             catch (PDOException $e)
             {
                 # Log the error
-                file_put_contents(ROOT_DIR . $this->config('LOG_FILE'), file_get_contents(ROOT_DIR . $this->config('LOG_FILE') . "\n{$e->getMessage()}"));
+                file_put_contents(ROOT_DIR . $this->config('LOG_FILE'), file_get_contents(ROOT_DIR . $this->config('LOG_FILE')) . "\n{$e->getMessage()}");
                 if($this->config('DEBUG')) throw $e;
             }
         }
