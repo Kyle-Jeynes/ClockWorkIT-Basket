@@ -4,7 +4,10 @@ My solution uses a MYSQL database to make it more dynamic and maintainable; I at
 
 ## Images
 
+Manual installation and execution
 ![PoC](https://i.imgur.com/vss65XQ.png)
+
+Docker installation and execution
 ![Docker](https://i.imgur.com/V3sXe6n.png)
 
 ## Requirements
