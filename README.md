@@ -67,6 +67,13 @@ php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
 php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
 ```
 
+## PHPUnit Tests
+
+- I have built in a few tests to make development life easier and decided to add it into the project.
+- PHPUnit ^9.5 is used and test can be ran by executing the `vendor/bin/phpunit` binary inside the project root directory.
+
+![Tests Pass](https://i.imgur.com/7QVxRmG.png)
+
 ## Extending products
 
 Migrations can be found in [app/Database/migrations](https://github.com/Kyle-Jeynes/ClockWorkIT-Basket/tree/main/app/Database/migrations). Products and Discounts can be added and removed from here to expand the products.
