@@ -38,7 +38,7 @@ class BasketController
     /**
      * Process the basket ready for summary
      */
-    public function processOrder(): void
+    public function processOrder(): BasketController
     {
         # Database transaction for speed and correct locks
         $pdo = Database::raw();
@@ -67,10 +67,10 @@ class BasketController
             }
         }
         
-        # Commit the transaction, apply discounts and output
+        # Commit the transaction and apply discounts
         $pdo->commit();
-        $this->applyDiscounts()
-            ->outputResults();
+        $this->applyDiscounts();
+        return $this;
     }
     
     /**
@@ -142,7 +142,7 @@ class BasketController
      * Output to terminal
      * @return void
      */
-    private function outputResults(): void
+    public function outputResults(): void
     {
         # Calculate the easy way
         $subTotal = number_format(array_sum(array_column($this->basket, 'subtotal')), 2);
@@ -155,5 +155,17 @@ class BasketController
         else
             echo "(no offers available)\n";
         echo "Total: £{$total}\n"; # additional line break for linux
+    }
+    
+    /**
+     * Return subtotal and total
+     * @return array
+     */
+    public function getResults(): array
+    {
+        return [
+            number_format(array_sum(array_column($this->basket, 'subtotal')), 2),
+            number_format(array_sum(array_column($this->basket, 'total')), 2)
+        ];
     }
 }

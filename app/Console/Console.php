@@ -65,6 +65,7 @@ final class Console
     {
         $this->basketController
             ->validate(array_slice($argv, 2))
-            ->processOrder();
+            ->processOrder()
+            ->outputResults();
     }
 }
