@@ -31,7 +31,7 @@ RUN apt-get update -y && \
     mv composer.phar /usr/local/bin/composer && \
     cd /opt/clockworkit && \
     /usr/local/bin/composer dump-autoload -o && \
-    /usr/local/bin/composer install --dev
+    /usr/local/bin/composer install
 
 USER root
 EXPOSE 9000
