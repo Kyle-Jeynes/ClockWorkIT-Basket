@@ -57,6 +57,9 @@ php -f public/index.php MigrateDatabase
 
 # use the basket
 php -f public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
+
+# run tests
+vendor/bin/phpunit
 ```
 
 ## Installation - Manually
@@ -75,6 +78,9 @@ php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
 
 # use the application
 php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
+
+# run tests
+vendor/bin/phpunit
 ```
 
 ## PHPUnit Tests
