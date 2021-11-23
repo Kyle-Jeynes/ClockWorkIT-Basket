@@ -19,7 +19,7 @@ Docker installation and execution
 
 ## Installation - Docker is recommended
 
-Ensure you update the `.env` file inside the main repository with your revelant SQL information. I used XAMPP locally to test.
+Ensure you update the `.env` file inside the main repository with your revelant SQL information. I used XAMPP locally to test running the SQL server at `127.0.0.1:3306`.
 
 ```bash
 # clone the repository
