@@ -75,10 +75,10 @@ composer dump-autoload -o
 composer install
 
 # migrate the database
-php -q /opt/kyle-jeynes-submission/public/index.php MigrateDatabase
+php -q public/index.php MigrateDatabase
 
 # use the application
-php -q /opt/kyle-jeynes-submission/public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
+php -q public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Bread
 
 # run tests
 vendor/bin/phpunit
