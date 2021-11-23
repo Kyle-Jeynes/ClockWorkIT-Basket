@@ -1,6 +1,10 @@
 # ClockWorkIT - Basket Software
 
-My solution uses a MYSQL database to make it more dynamic and maintainable; I attempted to build it in the same way Laravel would work to demonstrate comptenteny in Laravel but noticed the technical interview says not to use Frameworks.
+- Implemented Database
+- Vanilla-PHP
+- Dockerized Environment
+
+Built from scratch, I tried to focus on implementing the core structure around Laravel to demonstrate competency in Laravel.
 
 ## Images of the application
 
