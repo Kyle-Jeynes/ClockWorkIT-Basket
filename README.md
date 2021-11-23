@@ -62,6 +62,8 @@ php -f public/index.php PriceBasket "Kyes Special Soup" "Kyes Special Soup" Brea
 vendor/bin/phpunit
 ```
 
+> When you are finished with testing, you can run `docker-compose down -v` to safely remove the container and remove the associated persisted data with it.
+
 ## Installation - Manually
 
 Ensure you update the `.env` file inside the main repository with your revelant SQL information. You will need [composer](https://getcomposer.org/download/) and you will need to have a running SQL server at `127.0.0.1:3306` (I used [XAMPP](https://www.apachefriends.org/download.html)).
