@@ -35,15 +35,15 @@ All the attributes are already set, just download docker and docker-compose on y
 
 ```bash
 # clone the repository
-git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git
+git clone https://github.com/Kyle-Jeynes/ClockWorkIT-Basket.git && cd ClockWorkIT-Basket
 
 # build and run containers
-docker-compose up -d --build
+docker-compose up -d --build > /dev/null
 
 # interact with container
 docker exec -it php /bin/bash
 
-# migrate the tables
+# migrate the tables - wait about 20 seconds before running so the mysql server can start
 php -f public/index.php MigrateDatabase
 
 # use the basket
