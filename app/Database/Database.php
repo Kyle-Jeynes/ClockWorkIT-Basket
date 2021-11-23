@@ -65,8 +65,8 @@ class Database extends PDO
                 {
                     # Blind execute the SQL query
                     echo ($this->prepare($query))->execute() ? "" : "failed.\n";
-                    echo "done.\n";
                 }
+                echo "done.\n";
             }
             catch (PDOException $e)
             {
