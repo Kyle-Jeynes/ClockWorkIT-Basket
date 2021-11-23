@@ -122,3 +122,7 @@ Everything was built from scratch from the ground up in an attempt to focus the 
 - If you have inputted incorrect `.env` configuration and built the containers:
  - `exit` from the container TTY and run `docker-compose down -v`.
  - Update your `.env` and then run `docker-compose up -d --build > /dev/null` again
+
+- Alternativly, the bash shell is executing as root to allow you to install applications.
+- Use `apt-get install -y nano` to update the `.env` From inside the shell:
+- `nano .env` - Use the DPAD Keys to move between lines and press CTRL+X when you are finished editing.
