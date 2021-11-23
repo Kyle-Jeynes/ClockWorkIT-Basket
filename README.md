@@ -6,7 +6,7 @@ My solution uses a MYSQL database to make it more dynamic and maintainable; I at
 
 > Manual installation and execution
 
-![PoC](https://i.imgur.com/vss65XQ.png)
+![PoC](https://i.imgur.com/EHHJW7D.png)
 
 > Docker installation and execution
 
