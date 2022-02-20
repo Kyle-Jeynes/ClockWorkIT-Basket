@@ -149,12 +149,12 @@ class BasketController
         $total = number_format(array_sum(array_column($this->basket, 'total')), 2);
         $discount = array_column($this->basket, 'discount');
         
-        echo "Subtotal £{$subTotal}\n";
+        echo "Subtotal £{$subTotal}" . PHP_EOL;
         if(count($discount) > 0)
             foreach($discount as $d) echo implode("\n", $d) . "\n";
         else
-            echo "(no offers available)\n";
-        echo "Total: £{$total}\n"; # additional line break for linux
+            echo "(no offers available)" . PHP_EOL;
+        echo "Total: £{$total}" . PHP_EOL;
     }
     
     /**
