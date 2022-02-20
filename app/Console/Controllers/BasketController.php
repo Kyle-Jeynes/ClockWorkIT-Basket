@@ -151,7 +151,7 @@ class BasketController
         
         echo "Subtotal £{$subTotal}" . PHP_EOL;
         if(count($discount) > 0)
-            foreach($discount as $d) echo implode("\n", $d) . "\n";
+            foreach($discount as $d) echo implode(PHP_EOL, $d) . PHP_EOL;
         else
             echo "(no offers available)" . PHP_EOL;
         echo "Total: £{$total}" . PHP_EOL;
